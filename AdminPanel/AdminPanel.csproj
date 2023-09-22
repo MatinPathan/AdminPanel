@@ -1,0 +1,375 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5D03936-02CB-41F8-B24F-E60D1F73F19A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminPanel</RootNamespace>
+    <AssemblyName>AdminPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44377</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Security.Cryptography.Algorithms" />
+    <Reference Include="System.Security.Cryptography.Encoding" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap-fileupload.min.css" />
+    <Content Include="assets\css\bootstrap-wysihtml5-hack.css" />
+    <Content Include="assets\css\calendar.css" />
+    <Content Include="assets\css\countdown.css" />
+    <Content Include="assets\css\error.css" />
+    <Content Include="assets\css\jqstooltip.css" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\jquery.cleditor-hack.css" />
+    <Content Include="assets\css\layout2.css" />
+    <Content Include="assets\css\layout2.min.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\main.min.css" />
+    <Content Include="assets\css\Markdown.Editor.hack.css" />
+    <Content Include="assets\css\MoneAdmin.css" />
+    <Content Include="assets\css\Offline.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\theme.css" />
+    <Content Include="assets\img\1.png" />
+    <Content Include="assets\img\1G.jpg" />
+    <Content Include="assets\img\1G_B.jpg" />
+    <Content Include="assets\img\2.png" />
+    <Content Include="assets\img\2G.jpg" />
+    <Content Include="assets\img\2G_B.jpg" />
+    <Content Include="assets\img\3.png" />
+    <Content Include="assets\img\4.png" />
+    <Content Include="assets\img\bg.png" />
+    <Content Include="assets\img\cp.png" />
+    <Content Include="assets\img\demoBig.jpg" />
+    <Content Include="assets\img\demoBig2.jpg" />
+    <Content Include="assets\img\demoImage.jpg" />
+    <Content Include="assets\img\demoImage2.jpg" />
+    <Content Include="assets\img\demoUpload.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\moreNoti.jpg" />
+    <Content Include="assets\img\moreNoti_old.jpg" />
+    <Content Include="assets\img\px_by_Gre3g.png" />
+    <Content Include="assets\img\user.gif" />
+    <Content Include="assets\img\user_old.gif" />
+    <Content Include="assets\js\bar_chart.js" />
+    <Content Include="assets\js\calendarInit.js" />
+    <Content Include="assets\js\countdown.js" />
+    <Content Include="assets\js\editorInit.js" />
+    <Content Include="assets\js\formsInit.js" />
+    <Content Include="assets\js\for_index.js" />
+    <Content Include="assets\js\get_slider.js" />
+    <Content Include="assets\js\image_gallery.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.knob.js" />
+    <Content Include="assets\js\line_chart.js" />
+    <Content Include="assets\js\login.js" />
+    <Content Include="assets\js\mapsInit.js" />
+    <Content Include="assets\js\moreNoti.js" />
+    <Content Include="assets\js\notifications.js" />
+    <Content Include="assets\js\pie_chart.js" />
+    <Content Include="assets\js\validationInit.js" />
+    <Content Include="assets\js\WizardInit.js" />
+    <Content Include="assets\plugins\autosize\jquery.autosize.min.js" />
+    <Content Include="assets\plugins\bootstrap-wysihtml5-hack.js" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="assets\plugins\chosen\chosen-sprite.png" />
+    <Content Include="assets\plugins\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\plugins\chosen\chosen.min.css" />
+    <Content Include="assets\plugins\CLEditor1_4_3\images\buttons.gif" />
+    <Content Include="assets\plugins\CLEditor1_4_3\images\toolbar.gif" />
+    <Content Include="assets\plugins\CLEditor1_4_3\jquery.cleditor.css" />
+    <Content Include="assets\plugins\CLEditor1_4_3\jquery.cleditor.min.js" />
+    <Content Include="assets\plugins\colorpicker\css\colorpicker.css" />
+    <Content Include="assets\plugins\colorpicker\img\alpha.png" />
+    <Content Include="assets\plugins\colorpicker\img\hue.png" />
+    <Content Include="assets\plugins\colorpicker\img\saturation.png" />
+    <Content Include="assets\plugins\colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\plugins\countdown\jquery.countdown.min.js" />
+    <Content Include="assets\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="assets\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\plugins\datepicker\css\datepicker.css" />
+    <Content Include="assets\plugins\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="assets\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="assets\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="assets\plugins\daterangepicker\moment.min.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\css\jslider.blue.css" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\css\jslider.css" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\css\jslider.plastic.css" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\css\jslider.round.css" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\css\jslider.round.plastic.css" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\img\jslider.blue.png" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\img\jslider.plastic.png" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\img\jslider.png" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\img\jslider.round.plastic.png" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\img\jslider.round.png" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\draggable-0.1.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\jquery.dependClass-0.1.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\jquery.numberformatter-1.2.3.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\jquery.slider.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\jshashtable-2.1_src.js" />
+    <Content Include="assets\plugins\egorkhmelev-jslider\js\tmpl.js" />
+    <Content Include="assets\plugins\flot\examples\examples.css" />
+    <Content Include="assets\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="assets\plugins\flot\jquery.flot.time.js" />
+    <Content Include="assets\plugins\flot\LICENSE.txt" />
+    <Content Include="assets\plugins\Font-Awesome\css\font-awesome.css" />
+    <Content Include="assets\plugins\Font-Awesome\font\fontawesome-webfont.svg" />
+    <Content Include="assets\plugins\fullcalendar-1.6.2\fullcalendar\fullcalendar.css" />
+    <Content Include="assets\plugins\fullcalendar-1.6.2\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\plugins\gmaps\gmaps.js" />
+    <Content Include="assets\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="assets\plugins\gritter\images\gritter-light.png" />
+    <Content Include="assets\plugins\gritter\images\gritter-long.png" />
+    <Content Include="assets\plugins\gritter\images\gritter.png" />
+    <Content Include="assets\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="assets\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="assets\plugins\inputlimiter\jquery.inputlimiter.1.0.css" />
+    <Content Include="assets\plugins\inputlimiter\jquery.inputlimiter.1.3.1.min.js" />
+    <Content Include="assets\plugins\jasny\js\bootstrap-fileupload.js" />
+    <Content Include="assets\plugins\jasny\js\bootstrap-inputmask.js" />
+    <Content Include="assets\plugins\jquery-2.0.3.min.js" />
+    <Content Include="assets\plugins\jquery-steps-master\build\jquery.steps.js" />
+    <Content Include="assets\plugins\jquery-steps-master\demo\css\jquery.steps.css" />
+    <Content Include="assets\plugins\jquery-steps-master\demo\css\normalize.css" />
+    <Content Include="assets\plugins\jquery-steps-master\demo\css\wizardMain.css" />
+    <Content Include="assets\plugins\jquery-steps-master\lib\jquery.cookie-1.3.1.js" />
+    <Content Include="assets\plugins\jquery-validation-1.11.1\dist\jquery.validate.min.js" />
+    <Content Include="assets\plugins\jquery.dualListbox-1.3\jquery.dualListBox-1.3.min.js" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\blank.gif" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancybox-x.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancybox-y.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancybox.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_close.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_loading.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_nav_left.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_nav_right.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_e.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_n.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_ne.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_nw.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_s.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_se.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_sw.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_shadow_w.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_title_left.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_title_main.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_title_over.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\fancy_title_right.png" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="assets\plugins\jquery.fancybox-1.3.4\jquery-1.4.3.min.js" />
+    <Content Include="assets\plugins\magic\magic.css" />
+    <Content Include="assets\plugins\Markdown.Editor-hack.js" />
+    <Content Include="assets\plugins\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="assets\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="assets\plugins\morris\morris-demo.js" />
+    <Content Include="assets\plugins\morris\morris.js" />
+    <Content Include="assets\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="assets\plugins\pagedown\Markdown.Converter.js" />
+    <Content Include="assets\plugins\pagedown\Markdown.Sanitizer.js" />
+    <Content Include="assets\plugins\social-buttons\social-buttons.css" />
+    <Content Include="assets\plugins\switch\static\js\bootstrap-switch.min.js" />
+    <Content Include="assets\plugins\switch\static\stylesheets\bootstrap-switch.css" />
+    <Content Include="assets\plugins\tagsinput\jquery.tagsinput.css" />
+    <Content Include="assets\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="assets\plugins\timeline\timeline.css" />
+    <Content Include="assets\plugins\timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="assets\plugins\timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="assets\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="assets\plugins\uniform\themes\default\css\uniform.default.css" />
+    <Content Include="assets\plugins\uniform\themes\default\images\bg-input-focus.png" />
+    <Content Include="assets\plugins\uniform\themes\default\images\bg-input.png" />
+    <Content Include="assets\plugins\uniform\themes\default\images\sprite.png" />
+    <Content Include="assets\plugins\validationengine\css\validationEngine.jquery.css" />
+    <Content Include="assets\plugins\validationengine\js\jquery.validationEngine.js" />
+    <Content Include="assets\plugins\validationengine\js\languages\jquery.validationEngine-en.js" />
+    <Content Include="assets\plugins\validVal\js\jquery.validVal.min.js" />
+    <Content Include="assets\plugins\wysihtml5\dist\bootstrap-wysihtml5-0.0.2.css" />
+    <Content Include="assets\plugins\wysihtml5\lib\js\wysihtml5-0.3.0.min.js" />
+    <Content Include="blank.html" />
+    <Content Include="blank2.html" />
+    <Content Include="button.html" />
+    <Content Include="charts_bar.html" />
+    <Content Include="charts_line.html" />
+    <Content Include="charts_other.html" />
+    <Content Include="charts_pie.html" />
+    <Content Include="errors_403.html" />
+    <Content Include="errors_404.html" />
+    <Content Include="errors_405.html" />
+    <Content Include="errors_500.html" />
+    <Content Include="errors_503.html" />
+    <Content Include="forms_advance.html" />
+    <Content Include="forms_editors.html" />
+    <Content Include="forms_fileupload.html" />
+    <Content Include="forms_general.html" />
+    <Content Include="forms_validation.html" />
+    <Content Include="gallery.html" />
+    <Content Include="grid.html" />
+    <Content Include="icon.html" />
+    <Content Include="index.html" />
+    <Content Include="login.aspx" />
+    <Content Include="login.html" />
+    <Content Include="maps.html" />
+    <Content Include="modals.html" />
+    <Content Include="more_notifications.html" />
+    <Content Include="notifications.html" />
+    <Content Include="pages_calendar.html" />
+    <Content Include="pages_offline.html" />
+    <Content Include="pages_pricing.html" />
+    <Content Include="pages_social.html" />
+    <Content Include="pages_timeline.html" />
+    <Content Include="pages_uc.html" />
+    <Content Include="progress.html" />
+    <Content Include="sliders.html" />
+    <Content Include="tables.html" />
+    <Content Include="tabs_panels.html" />
+    <Content Include="typography.html" />
+    <Content Include="Web.config" />
+    <Content Include="wizard.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\plugins\Font-Awesome\font\fontawesome-webfont.eot" />
+    <Content Include="assets\plugins\Font-Awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\plugins\Font-Awesome\font\fontawesome-webfont.woff" />
+    <Content Include="assets\plugins\Font-Awesome\font\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63184</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44377/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.19.4\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
